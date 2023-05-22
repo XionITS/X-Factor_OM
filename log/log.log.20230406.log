@@ -1,0 +1,95 @@
+INFO, 2023-04-07 08:50:12,139, dashboard_function.py - server_BChartDataList - Success
+INFO, 2023-04-07 08:50:13,064, dashboard_function.py - service_donutChartData - Success
+INFO, 2023-04-07 08:50:13,501, dashboard_function.py - alarmData - Success
+INFO, 2023-04-07 08:50:13,818, dashboard_function.py - server_LChartDataList - Success
+INFO, 2023-04-07 08:50:14,168, dashboard_function.py - os_donutChartData - Success
+INFO, 2023-04-07 08:50:14,471, dashboard_function.py - vendorChartList - Success
+INFO, 2023-04-07 08:50:14,742, dashboard_function.py - alarm_donutChartData - Success
+INFO, 2023-04-07 08:50:15,247, dashboard_function.py - BNChartDataList - Success
+INFO, 2023-04-07 08:50:15,247, dashboard_function.py - WMCDL(World Map Chart Data List) - Success
+INFO, 2023-04-07 08:50:16,073, dashboard_function.py - connectIpDataList - Success
+INFO, 2023-04-07 08:50:16,313, dashboard_function.py - connectServerDataList - Success
+INFO, 2023-04-07 08:50:16,503, dashboard_function.py - memoryMoreDataList - Success
+ERROR, 2023-04-07 08:50:35,266, Internal Server Error: /om/
+Traceback (most recent call last):
+  File "C:\venvs\xion\lib\site-packages\django\contrib\sessions\backends\base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\venvs\xion\lib\site-packages\django\db\backends\base\base.py", line 244, in ensure_connection
+    self.connect()
+  File "C:\venvs\xion\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\venvs\xion\lib\site-packages\django\db\backends\base\base.py", line 225, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\venvs\xion\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\venvs\xion\lib\site-packages\django\db\backends\postgresql\base.py", line 203, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\venvs\xion\lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "192.168.5.160", port 5432 failed: Software caused connection abort (0x00002745/10053)
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\venvs\xion\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\venvs\xion\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\X-FACTOR\X-Factor_OM\web\views\base_views.py", line 89, in om
+    if not 'sessionid' in request.session:
+  File "C:\venvs\xion\lib\site-packages\django\contrib\sessions\backends\base.py", line 50, in __contains__
+    return key in self._session
+  File "C:\venvs\xion\lib\site-packages\django\contrib\sessions\backends\base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "C:\venvs\xion\lib\site-packages\django\contrib\sessions\backends\db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "C:\venvs\xion\lib\site-packages\django\contrib\sessions\backends\db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "C:\venvs\xion\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\venvs\xion\lib\site-packages\django\db\models\query.py", line 492, in get
+    num = len(clone)
+  File "C:\venvs\xion\lib\site-packages\django\db\models\query.py", line 302, in __len__
+    self._fetch_all()
+  File "C:\venvs\xion\lib\site-packages\django\db\models\query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\venvs\xion\lib\site-packages\django\db\models\query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "C:\venvs\xion\lib\site-packages\django\db\models\sql\compiler.py", line 1359, in execute_sql
+    cursor = self.connection.cursor()
+  File "C:\venvs\xion\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\venvs\xion\lib\site-packages\django\db\backends\base\base.py", line 284, in cursor
+    return self._cursor()
+  File "C:\venvs\xion\lib\site-packages\django\db\backends\base\base.py", line 260, in _cursor
+    self.ensure_connection()
+  File "C:\venvs\xion\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\venvs\xion\lib\site-packages\django\db\backends\base\base.py", line 243, in ensure_connection
+    with self.wrap_database_errors:
+  File "C:\venvs\xion\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\venvs\xion\lib\site-packages\django\db\backends\base\base.py", line 244, in ensure_connection
+    self.connect()
+  File "C:\venvs\xion\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\venvs\xion\lib\site-packages\django\db\backends\base\base.py", line 225, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\venvs\xion\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\venvs\xion\lib\site-packages\django\db\backends\postgresql\base.py", line 203, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "C:\venvs\xion\lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: connection to server at "192.168.5.160", port 5432 failed: Software caused connection abort (0x00002745/10053)
+	Is the server running on that host and accepting TCP/IP connections?
+
+WARNING, 2023-04-07 08:50:41,794, Not Found: /favicon.ico
+INFO, 2023-04-07 09:15:50,430, Run Finished
